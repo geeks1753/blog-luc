@@ -1,10 +1,10 @@
 <?php
-    // creation de la fonction menu
+// creation de la fonction menu
 
-    require_once("fonctions.php");
-    $fonction = new site('127.0.0.1', 'root', '', 'journal');
-    $fonction->head();
-    ?>
+require_once("fonctions.php");
+$fonction = new site('127.0.0.1', 'root', '', 'journal');
+$fonction->head();
+?>
 
 <body>
 
@@ -63,7 +63,7 @@
 
 
 
-	
+
 
 
 		<footer>
