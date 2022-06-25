@@ -1,0 +1,328 @@
+body {
+    background-image: url("images/fond1.png");
+    background-attachment: fixed;
+    position: relative;
+}
+
+.container{
+    width: 1200px;
+    margin: auto;
+}
+.row {
+    display: flex;
+}
+
+.col-3 {
+    width: 30%;
+}
+
+.col-7 {
+    width: 70%;
+}
+
+.logo {
+    font-family: "Kaushan Script";
+    font-size: 2em;
+    margin-top: 0px;
+
+}
+
+#logo,
+p {
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+
+
+header {
+    font-family: Dayrom, serif;
+    font-size: 1.1em;
+    margin-top: 0px;
+    font-weight: normal;
+}
+
+
+
+
+/*navigation*/
+nav {
+    width: 100%;
+    margin: 10 auto;
+    top: 0px;
+}
+
+nav ul {
+    list-style-type: none;
+    width: 1000px;
+    float: right;
+    font-size: 22px;
+    margin-top: 0px;
+}
+
+nav ul li {
+    float: right;
+    width: 20%;
+    text-align: center;
+
+}
+
+nav ul::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+nav a {
+    display: block;
+    text-decoration: none;
+    color: black;
+    border-bottom: 2px solid transparent;
+    padding: 10px 0px;
+}
+
+nav a:hover {
+    color: orange;
+    border-bottom: 2px solid gold;
+}
+
+.sous {
+    display: none;
+    box-shadow: 0px 1px 2px #CCC;
+    background-color: white;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav>ul li:hover .sous {
+    display: block;
+}
+
+ul.sous {
+    background-color: rgba(255, 255, 255, 0);
+    box-shadow: none;
+}
+
+.sous li {
+    float: none;
+    width: 500%;
+    text-align: left;
+}
+
+.sous a {
+    padding: 10px;
+    border-bottom: none;
+    width: 100px
+}
+
+.sous a:hover {
+    border-bottom: none;
+    background-color: RGBa(200, 200, 200, 0);
+
+}
+
+.deroulant>a::after {
+    content: " ▼";
+    font-size: 12px;
+}
+
+.titre {
+    font-family: "Kaushan Script";
+    font-size: 45px;
+    padding-top: 70px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+/* Corps */
+
+.box {
+    width: 800px;
+}
+
+.box,
+aside {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.ico_categorie {
+    vertical-align: left;
+    margin-right: 8px;
+}
+
+.titreArt {
+    font-family: "Kaushan Script";
+    font-size: 35px;
+    text-align: center;
+    color: black;
+
+}
+
+
+
+.texte {
+    font-size: 1.05em;
+    margin-left: 20px;
+    text-align: center;
+
+}
+
+.image {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 20px;
+}
+
+.image-card {
+    width: 500px;
+    height: 200px;
+}
+
+
+
+aside {
+    position: relative;
+    width: 305px;
+    background-color: #706b64;
+    box-shadow: 0px 2px 5px #1c1a19;
+    border-radius: 5px;
+    padding: 10px;
+    color: white;
+    font-size: 0.9em;
+    float: right;
+    margin-right: 15px;
+}
+
+/*annimation*/
+
+
+#conteneur {
+    height: 485px;
+    width: 331px;
+    margin-right: 15px;
+}
+
+#conteneur img {
+    position: absolute;
+    right: 0;
+}
+
+@keyframes fondu-in-out {
+    0% {
+        opacity: 1;
+    }
+
+    25% {
+        opacity: 1;
+    }
+
+    75% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+#conteneur img.image-de-dessus {
+    animation-name: fondu-in-out;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-duration: 7s;
+    animation-direction: alternate;
+}
+
+
+/*footer*/
+
+.reseau>a {
+    float: right;
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    margin: 0 8px;
+    color: inherit;
+    opacity: 0.75;
+}
+
+.footer-basic {
+    position: absolute;
+    padding-bottom: 0;
+    color: #4b4c4d;
+    border: 2px solid #4b4c4d;
+    width: 100%;
+    height: 140px
+}
+
+#scroll_to_top {
+    position: fixed;
+    width: 25px;
+    height: 25px;
+    bottom: 50px;
+    right: 30px;
+}
+
+#scroll_to_top img {
+    width: 25px;
+}
+
+.footer-basic ul {
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+.footer-basic li {
+    padding: 0 10px;
+}
+
+.footer-basic ul a {
+    color: inherit;
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+.footer-basic ul a:hover {
+    opacity: 1;
+}
+
+.footer-basic .social {
+    text-align: center;
+    padding-bottom: 25px;
+}
+
+.footer-basic .social>a {
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    margin: 0 8px;
+    color: inherit;
+    opacity: 0.75;
+}
+
+.footer-basic .social>a:hover {
+    opacity: 0.9;
+}
+
+.footer-basic .copyright {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 13px;
+    color: #aaa;
+}
