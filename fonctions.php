@@ -40,9 +40,11 @@ class site
 			<meta http-equiv="X-UA-Compatible" content="IE=edge">
 			<meta name="viewport" content="width=device-width, initial-scale=1.0">
 			<meta name="description" content="Luc investigation journaliste catastrophe naturelle incendie inondation seisme tremblement de terre feu ">
-			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
 			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
 			<link rel="stylesheet" href="style1.css" />
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+			<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
 			<title>luc investigation</title>
 		</head>
 	<?php
@@ -85,30 +87,3 @@ class site
 	}
 }
 
-/*
-?>
-
-
-<?php // creation de la fonction du footer
-
-class foot {
-
-	function footer (){
-?>	
-		<footer>
-						<div class="footer-basic">
-						<div class="social"><a href="#"><i class="icon ion-social-instagram"></i></a><a href="https://www.facebook.com/"target="_blank"><i class="icon ion-social-facebook"></i></a></div>
-						
-						<div id="scroll_to_top">
-							<a href="#top"><img src="images/scrolltop.png" alt="Retourner en haut" /></a>
-						</div>
-						<div class="copyright"> kohl-web-design © 2022</div>
-						</div>
-		</footer>
-
-<?php
-}
-
-
-} 
-?>*/

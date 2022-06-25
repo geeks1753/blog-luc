@@ -1,39 +1,65 @@
 <?php
-    // creation de la fonction menu
+// creation de la fonction menu
 
-    require_once("fonctions.php");
-    $fonction = new site('127.0.0.1', 'root', '', 'journal');
-    $fonction->head();
-    ?>
+require_once("fonctions.php");
+$fonction = new site('127.0.0.1', 'root', '', 'journal');
+$fonction->head();
+?>
 
-    <body>
-        
-        <header>
-            <?php
+<body>
 
-            $fonction->menu();
-            ?>
+    <header>
+        <?php
 
-        </header>
-        <div class="titre">Votre pojet de sites</div>
-        <div class="box">
+        $fonction->menu();
+        ?>
 
-            <p>
+    </header>
+    <div class="titre">contactez-moi</div>
+    <div class="box">
+        <form id="contact-form" method="post" action="" role="form">
+            <div class="row">
+                <div class="col-lg-6">
+                    <label for="firstname" class="form-label">Prénom <span class="blue">*</span></label>
+                    <input id="firstname" type="text" name="firstname" class="form-control" placeholder="Votre prénom">
+                    <p class="comments">Message d'erreur</p>
+                </div>
+                <div class="col-lg-6">
+                    <label for="name" class="form-label">Nom <span class="blue">*</span></label>
+                    <input id="name" type="text" name="name" class="form-control" placeholder="Votre Nom">
+                    <p class="comments">Message d'erreur</p>
+                </div>
+                <div class="col-lg-6">
+                    <label for="email" class="form-label">Email <span class="blue">*</span></label>
+                    <input id="email" type="text" name="email" class="form-control" placeholder="Votre Email">
+                    <p class="comments">Message d'erreur</p>
+                </div>
+                <div class="col-lg-6">
+                    <label for="phone" class="form-label">Téléphone</label>
+                    <input id="phone" type="text" name="phone" class="form-control" placeholder="Votre Téléphone">
+                    <p class="comments">Message d'erreur</p>
+                </div>
+                <div>
+                    <label for="message" class="form-label">Message <span class="blue">*</span></label>
+                    <textarea id="message" name="message" class="form-control" placeholder="Votre Message" rows="4"></textarea>
+                    <p class="comments">Message d'erreur</p>
+                </div>
+                <div>
+                    <p class="blue"><strong>* Ces informations sont requises.</strong></p>
+                </div>
+                <div>
+                    <input type="submit" class="button1" value="Envoyer">
+                </div>
+            </div>
+            <p class="thank-you">Votre message a bien été envoyé. Merci de m'avoir contacté :)</p>
+        </form>
+    </div>
 
+    <footer>
+        <?php
+        // appel de la fonction footer
 
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vulputate augue ipsum, ut viverra magna tempus ut. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi ac volutpat enim. Donec ex massa, cursus ut sodales eu, pretium ut justo. Praesent sagittis, ex sed porta auctor, lacus purus dictum dolor, et bibendum quam metus et mauris. Ut non hendrerit orci. Donec tristique tristique nunc, id ornare urna semper porta. Cras imperdiet lacinia ex. Curabitur at iaculis dui. Vestibulum eu libero eget tortor venenatis feugiat. Integer pulvinar lacus non porttitor faucibus. Sed vel ante in velit ornare volutpat ac non augue.
-
-                Sed tristique, nibh vel fermentum ultrices, tellus libero suscipit quam, quis cursus ex diam non lorem. Donec sed massa viverra, lacinia nulla et, pretium urna. Vestibulum eget venenatis augue. Quisque fringilla in lorem rhoncus sagittis. Pellentesque eu metus in turpis porttitor varius non et urna. Praesent at tempus diam, vitae semper justo. Donec sed purus libero. Quisque sed massa id mi egestas egestas at id risus. Mauris gravida leo sit amet luctus tincidunt. Maecenas id magna quis diam pretium tempus. Curabitur lobortis mauris mi, quis consectetur massa gravida fermentum. Cras pretium, ligula sodales accumsan accumsan, ligula tellus pulvinar nisi, quis rhoncus felis lacus eget nisl. Ut metus mi, blandit et quam et, semper gravida odio. Quisque pulvinar velit id urna vulputate tristique. Nam sodales egestas porta.
-
-                Interdum et malesuada fames ac ante ipsum primis in faucibus. In nisi nibh, ultrices sit amet pulvinar quis, ornare ac lacus. Ut posuere vitae nibh tincidunt pharetra. Quisque efficitur erat sit amet purus pulvinar, vel condimentum justo mattis. Pellentesque at justo at ipsum congue finibus. In hac habitasse platea dictumst. Mauris ullamcorper facilisis nisl, at facilisis tortor dictum eget. Cras eget varius dolor. Phasellus sit amet fringilla ligula. Nunc sollicitudin nisi vel urna tincidunt ornare. Sed iaculis neque nibh, ut viverra felis volutpat id. Sed finibus magna et augue sagittis suscipit non in nisi. Praesent non tortor non erat luctus elementum. Suspendisse mollis tempor arcu vitae sodales. Interdum et malesuada fames ac ante ipsum primis in faucibus. Phasellus at dignissim eros, sit amet vestibulum dolor.
-            </p>
-
-
-            <footer>
-                <?php
-                // appel de la fonction footer
-
-                $fonction->footer();
-                ?>
-            </footer>
-    </body>
+        $fonction->footer();
+        ?>
+    </footer>
+</body>
