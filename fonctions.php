@@ -18,6 +18,9 @@ class site
 	}
 
 	//---------------méthode pour réaliser les requêtes------------------
+
+
+
 	function effectuerRequete($requete)         //OK
 	{
 		$resultat = false;
@@ -27,6 +30,14 @@ class site
 			mysqli_close($con);
 		}
 		return $resultat;
+	}
+
+	function securite($secu)
+	{
+	$secu=trim($secu);
+	$secu=stripslashes($secu);
+	$secu=htmlspecialchars($secu);
+	return $secu;
 	}
 
 	function head()

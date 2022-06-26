@@ -170,8 +170,12 @@ aside {
 }
 
 /*formulaire*/
-.box1 {
-    margin: 70px 0px;
+
+.contact {
+    margin: 70px auto;
+    float: center;
+    width: 50%;
+
 }
 
 #contact-form {
