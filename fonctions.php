@@ -21,7 +21,7 @@ class site
 
 
 
-	function effectuerRequete($requete)         //OK
+	function effectuerRequete($requete)         
 	{
 		$resultat = false;
 		$con = new mysqli($this->host, $this->user, $this->pass, $this->bdd);

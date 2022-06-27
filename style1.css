@@ -23,11 +23,10 @@ body {
     font-family: "Kaushan Script";
     font-size: 2em;
     margin-top: 0px;
-
 }
 
-#logo,
-p {
+
+#logo , p {
     display: inline-block;
     vertical-align: bottom;
 }

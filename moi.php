@@ -11,12 +11,12 @@ $fonction->head();
 
 
 	<header>
-		<?php
 
-		$fonction->menu();
+		<?php include_once('header.php'); // appel de la page header
 		?>
 
 	</header>
+
 	<div class="titre">Je me Présente</div>
 	<div class="box">
 		<article>
@@ -32,7 +32,9 @@ $fonction->head();
 
 
 		</article>
+
 	</div>
+	
 	<aside>
 		<h1>À propos de l'auteur</h1>
 
@@ -48,10 +50,7 @@ $fonction->head();
 
 
 	<footer>
-		<?php
-		// appel de la fonction footer
-
-		$fonction->footer();
+		<?php include_once('footer.php'); // appel de la page footer
 		?>
 	</footer>
 </body>
