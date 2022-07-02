@@ -1,9 +1,9 @@
 body {
     background-image: url("images/fond1.png");
-    background-attachment: fixed;
     position: relative;
-    
+
 }
+
 
 .row {
     display: flex;
@@ -17,7 +17,10 @@ body {
 
 .col-8 {
     text-align: center;
+    
 }
+
+
 
 .logo {
     font-family: "Kaushan Script";
@@ -85,26 +88,84 @@ nav a:hover {
 }
 
 
-
+/* style du titre de la page */
 .titre {
     font-family: "Kaushan Script";
     font-size: 45px;
     padding-top: 70px;
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 90px;
 }
 
+/* Style presentation  */
+
+.prenom {
+    font-family: "Kaushan Script";
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 10px;
+    }
+
+
+.imgProf {
+    display: block;
+    margin: auto;
+    max-width: 50%;
+    height: 100px;
+    float:right;
+    
+
+}
+
+
+.presentation{
+    font-size: 20px;
+    text-align: center;
+    margin-top: 10px;
+    }  
+
+/* Style lien CV */
+
+.CV ul {
+    list-style-type: none;
+    width: 150px;
+    float: left;
+    font-size: 22px;
+    }
+
+.CV ul li {
+    float: right;
+    width: 30%;
+    text-align: center;
+
+}
+
+nav ul::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.CV a {
+    display: block;
+    font-family: "Kaushan Script";
+    text-decoration: none;
+    color: black;
+    width: 350%;
+    border-bottom: 2px solid transparent;
+    padding: 10px 0px;
+    
+}
+
+.CV a:hover {
+    color: orange;
+    border-bottom: 2px solid gold;
+}
+
+    
+
+    
 /* Corps */
-
-.box {
-    width: 800px;
-}
-
-.box,
-aside {
-    display: inline-block;
-    vertical-align: top;
-}
 
 .ico_categorie {
     vertical-align: left;
@@ -116,64 +177,92 @@ aside {
     font-size: 30px;
     text-align: center;
     color: black;
+    
 
 }
 
 
+.page {
+    width: 65%; /* je donne une largeur fixe */
+    margin: auto; /* je centre horizontalement */    
+    padding-bottom:30px;
 
+}
 .texte {
-    font-size: 1.em;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.3em;
     margin-left: 20px;
     text-align: center;
-
-}
-
-.image {
-    display: inline-block;
-    vertical-align: top;
-    margin-left: 20px;
-}
-
-.image-card {
-    width: 500px;
-    height: 200px;
 }
 
 
+.imageActu {
+    display: block;
+    margin: auto;
+    width: 300px;
+    height: auto;
+}
 
-aside {
-    position: relative;
-    width: 305px;
-    background-color: #706b64;
-    box-shadow: 0px 2px 5px #1c1a19;
+.image{
+    display: block;
+    margin: auto;
+    max-width : 75%;
+    height : 200px;
+    
+}
+
+/*formulaire commentaire*/
+
+.com{
+    margin-left: 25px;
+}
+
+.com p{
+    margin-bottom: 0px;
+    font-size:  20px;
+    font-family: "Kaushan Script";
+}
+
+.commentaire {
+    margin: 70px auto;
+    float: center;
+    width: 30%;
+}  
+#contact-com {
+    font-size: 20px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 20px;
+}
+#contact-com input[type=submit] {
+    margin: 15px auto 0px;
+    display: block;
+}
+
+
+
+.button2 {
+    border: 1px solid #ddd;
+    background: #ffa500;
+    color: #fff;
+    width: 50%;        
+    font-weight: bold;
+    text-transform: uppercase;
     border-radius: 5px;
-    padding: 10px;
-    color: white;
-    font-size: 0.9em;
-    float: right;
-    margin-right: 15px;
+    transition: all 0.3s ease-in 0s;
+}
+.button2:hover {
+    background: #333;
+    border-color: #ffa500;
 }
 
-/*annimation*/
 
-
-#conteneur {
-    height: 485px;
-    width: 331px;
-    margin-right: 15px;
-}
-
-#conteneur img {
-    position: absolute;
-    right: 0;
-}
-
-/*formulaire*/
+/*formulaire contact*/
 
 .contact {
     margin: 70px auto;
     float: center;
-    width: 50%;
+    width: 70%;
 
 }
 
@@ -224,21 +313,10 @@ aside {
 }
 
 
-/*footer*/
-
-.reseau>a {
-    /*float: right;-*/
-    font-size: 24px;
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    display: inline-block;
-    text-align: center;
-    border-radius: 50%;
-    border: 1px solid #ccc;
-    margin: 0 8px;
-    color: inherit;
-    opacity: 0.75;
+/* footer */
+#main{ 
+    margin-bottom: 1700px;   
+    position:relative;    
 }
 
 .footer-basic {
@@ -247,9 +325,9 @@ aside {
     color: #4b4c4d;
     border: 2px solid #4b4c4d;
     width: 100%;
-    height: 140px
+    height: 110px
 }
-
+/* Image pour remonter directement en haut de la page */
 #scroll_to_top {
     position: fixed;
     width: 25px;
@@ -262,33 +340,21 @@ aside {
     width: 25px;
 }
 
-.footer-basic ul {
-    padding: 0;
-    list-style: none;
-    text-align: center;
-    font-size: 18px;
-    line-height: 1.6;
-    margin-bottom: 0;
-}
+/* reglage icon reseaux sociaux */
 
-.footer-basic li {
-    padding: 0 10px;
-}
-
-.footer-basic ul a {
+.footer-basic a {
     color: inherit;
     text-decoration: none;
     opacity: 0.8;
 }
 
-.footer-basic ul a:hover {
-    opacity: 1;
-}
-
 .footer-basic .social {
     text-align: center;
     padding-bottom: 25px;
+    margin-top: 15px;
 }
+
+/* reglage icon reseaux sociaux */
 
 .footer-basic .social>a {
     font-size: 24px;
@@ -304,12 +370,8 @@ aside {
     opacity: 0.75;
 }
 
-.footer-basic .social>a:hover {
-    opacity: 0.9;
-}
-
+/* reglage copyright */
 .footer-basic .copyright {
-    margin-top: 15px;
     text-align: center;
     font-size: 13px;
     color: #aaa;

@@ -1,58 +1,62 @@
 <?php
-    // creation de la fonction menu
+// on définit le titre 
+$titre = "luc investigation Actualités";
 
-    require_once("fonctions.php");
-    $fonction = new site('127.0.0.1', 'root', '', 'journal');
-    $fonction->head();
-    ?>
+// on inclut le heder
+include_once('includes/header.php');
+
+// on inclut la navbar
+// @: empeche d'afficher le message d'erreur
+@include_once('includes/navbar.php');
+
+// creation de la fonction menu
+require_once("fonctions.php");
+$fonction = new site('127.0.0.1', 'root', '', 'journal');
+
+?>
+
+<body>
+    
+
+        <div class="titre">Actualités</div>
 
 
-<header>
-    <?php
+        <?php
 
-    $fonction->menu();
-    ?>
+        session_start();
+        $edito = "";
+        $requete = "SELECT `Image`,`Resume`,`Titre`,`Date` FROM `articles` ORDER BY `Date` DESC; "; // Creation de la requete
+        $resultat = $fonction->effectuerRequete($requete); // appel de fonction qui permet d effectuer la requete 
+        echo "<div class='container-fluide'>";
 
-</header>
+        while ($row = $resultat->fetch_assoc()) {
+        ?>
 
-<div class="titre">Actualités</div>
+            <div class="row">
+                <div class="col-4">
+                    <?php echo "<img  class='imageActu' src='images/" . $row["Image"] . ".jpg' />" ?>
+                </div>
+                <div class="col-8">
+                    <div style="display:inline-block;">
+                        <a href='edito.php?article=<?php echo $row['Image']; ?>'>
+                            <h1 class=titreArt> <?php echo $row['Titre']; ?></h1>
+                        </a>
+                        <?php echo " <p class=texte>" . $row['Resume'] . "</p> " ?>
+                    </div><br><br><br>
+                </div>
+            </div>
+    </div>
+<?php
+        }
+?>
+
+
+
+</div>
 
 
 <?php
-$requete = "SELECT `Image`,`Texte`,`Titre`,`Date` FROM `articles` ORDER BY `Date` DESC; "; // Creation de la requete
-$resultat = $fonction->effectuerRequete($requete); // appel de fonction qui permet d effectuer la requete
-while ($row = $resultat->fetch_assoc()) {
+// appel de la page footer
+include_once('includes/footer.php');
 ?>
-
-<div class="container-fluide">
-    <div class="row">
-        <div class="col-4">
-        <div class=image>
-            <?php echo "<img src='images/" . $row["Image"] . ".jpg' height='208' width='500'/>" ?>
-        </div>
-        </div>
-        <div class="col-8">
-        <div style="display:inline-block;">
-            <?php echo "<a href=''> <h1 class=titreArt>" . $row['Titre'] . "</h1></a>" ?>
-            <?php echo " <p class=texte>" . $row['Texte'] . "</p> " ?>
-        </div><br><br><br>
-        </div>
-    </div>
-</div>
-    <?php
-}
-    ?>
-
-    </div>
-
-
-
-
-    <footer>
-        <?php
-        // appel de la fonction footer
-
-        $fonction->footer();
-        ?>
-    </footer>
-    </body>
+</body>

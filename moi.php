@@ -1,56 +1,58 @@
 <?php
-// creation de la fonction menu
+// on définit le titre 
+$titre = "luc investigation présentation";
 
+// on inclut le heder
+include_once('includes/header.php');
+
+// on inclut la navbar
+@include_once('includes/navbar.php');
+
+// creation de la fonction menu
 require_once("fonctions.php");
 $fonction = new site('127.0.0.1', 'root', '', 'journal');
-$fonction->head();
 ?>
 
 
 <body>
 
 
-	<header>
-
-		<?php include_once('header.php'); // appel de la page header
-		?>
-
-	</header>
-
 	<div class="titre">Je me Présente</div>
-	<div class="box">
-		<article>
-			<h1> Kohl-Web-Design</h1><br>
-			<p>Concepteur de site web et de logos</p>
 
-			<p>kohl-web-Design, créateur de site internet et de logos, vous propose de vous accompagner dans vos projets digitaux.</p>
-			<p> - Anisi nous pouvons créer ou modifier vos sites internet et vos logos</p>
-			<p> - La priorité c'est de vous créer un site ou un logo qui répondent le plus possible à votre image .</p>
-			<p> - Vous avez la possibilité d'administrer vous même votre site</p><br><br><br><br><br><br><br><br>
-			<p>pour essai</p>
+	<div class="CV">
+		<ul>
+			<li>
+				<a href="dossier/cv.pdf" download="dossier/cv.pdf">Téléchargement de mon CV</a>
+			</li>
+		</ul>
+	</div>
+
+	<div class="imgProf"><img src="images/charlie.jpg"></div>
+
+	<div class="page">
+
+		<div class="prenom">
+			<h1> Luc </h1>
+			<p>Journalist d'investigation sur les catastrophes naturelles </p>
+
+		</div>
 
 
+		<div class="presentation">
+			<p>Je suis journaliste depuis 35 ans déja, j'ai sillonné la planètes de fond en comble à la recherche de la moindre catastrophe naturelle .
+				afin de vous faire vivre ma passion et vous alerter sur l'avenir climatique je vouspartage ces articles
+				La priorité c'est de vous informer, et de vous faire reagir.
+				du coup vous avez la possibilité de commenter vous même les articles
+			</p>
 
-		</article>
+		</div>
+
 
 	</div>
-	
-	<aside>
-		<h1>À propos de l'auteur</h1>
 
-		<p>Passionné d'informatique et de dessin depuis de nombreuses années </p>
-		<p>du coup allier le design et la creativité était pour moi une évidence</p>
-		<div class="reseau">
-			<a href="#"><i class="icon ion-social-instagram"></i></a>
-			<a href="https://www.facebook.com/" target="_blank"><i class="icon ion-social-facebook"></i></a>
-		</div>
-	</aside>
+	<?php
+	// appel de la page footer
+	include_once('includes/footer.php');
+	?>
 
-
-
-
-	<footer>
-		<?php include_once('footer.php'); // appel de la page footer
-		?>
-	</footer>
 </body>

@@ -1,21 +1,22 @@
 <?php
-// creation de la fonction menu
+// on définit le titre 
+$titre="luc investigation commentaires";
 
+// on inclut le heder
+include_once('includes/header.php'); 
+
+// on inclut la navbar
+@include_once('includes/navbar.php'); 
+
+// creation de la fonction menu
 require_once("fonctions.php");
 $fonction = new site('127.0.0.1', 'root', '', 'journal');
-$fonction->head();
+
 ?>
 
 <body>
 
-	<header>
-		<?php
-
-		$fonction->menu();
-		?>
-
-	</header>
-	<div class="titre">Votre pojet de sites</div>
+	<div class="titre">Commentaires</div>
 	<div class="box">
 
 		<article>
@@ -66,11 +67,9 @@ $fonction->head();
 
 
 
-		<footer>
-			<?php
-			// appel de la fonction footer
-
-			$fonction->footer();
-			?>
-		</footer>
+		
+		<?php  
+        // appel de la page footer
+         include_once('includes/footer.php'); 
+		?>
 </body>

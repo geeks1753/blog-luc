@@ -1,5 +1,5 @@
 <footer>
-    <div class="footer-basic">
+    <div class="footer-basic foot">
         <div class="social"><a href="#"><i class="icon ion-social-instagram"></i></a><a href="https://www.facebook.com/" target="_blank"><i class="icon ion-social-facebook"></i></a></div>
 
         <div id="scroll_to_top">
