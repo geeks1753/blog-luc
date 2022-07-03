@@ -75,7 +75,7 @@ function isEmail($var)
 
 ?>
 
-<body>
+
 
     <div class="titre">Contactez-moi</div>
 
@@ -88,4 +88,3 @@ function isEmail($var)
     // appel de la page footer
     include_once('includes/footer.php');
     ?>
-</body>

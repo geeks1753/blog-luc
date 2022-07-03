@@ -14,7 +14,7 @@ $fonction = new site('127.0.0.1', 'root', '', 'journal');
 ?>
 
 
-<body>
+
 
 
 	<div class="titre">Je me Présente</div>
@@ -55,4 +55,3 @@ $fonction = new site('127.0.0.1', 'root', '', 'journal');
 	include_once('includes/footer.php');
 	?>
 
-</body>

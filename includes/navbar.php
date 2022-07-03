@@ -1,5 +1,6 @@
 <nav>
 	<ul>
+		<li><a href="membre.php">Membre</a></li>
 		<li><a href="contact.php">Contacts </a></li>
 		<li><a href="actualites.php">Actualités </a></li>
 		<li><a href="moi.php">A propos de moi </a></li>

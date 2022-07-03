@@ -15,7 +15,7 @@ $fonction = new site('127.0.0.1', 'root', '', 'journal');
 
 ?>
 
-<body>
+
     
 
         <div class="titre">Actualités</div>
@@ -24,12 +24,12 @@ $fonction = new site('127.0.0.1', 'root', '', 'journal');
         <?php
 
         session_start();
-        $edito = "";
-        $requete = "SELECT `Image`,`Resume`,`Titre`,`Date` FROM `articles` ORDER BY `Date` DESC; "; // Creation de la requete
+        $edito = ""; // initialisation variable 
+        $requete = "SELECT `ID`,`Image`,`Resume`,`Titre`,`Date` FROM `articles` ORDER BY `Date` DESC; "; // Creation de la requete
         $resultat = $fonction->effectuerRequete($requete); // appel de fonction qui permet d effectuer la requete 
-        echo "<div class='container-fluide'>";
+        echo "<div class='container-fluide'>"; 
 
-        while ($row = $resultat->fetch_assoc()) {
+        while ($row = $resultat->fetch_assoc()) { // permet l'acces au tableau                
         ?>
 
             <div class="row">
@@ -38,7 +38,7 @@ $fonction = new site('127.0.0.1', 'root', '', 'journal');
                 </div>
                 <div class="col-8">
                     <div style="display:inline-block;">
-                        <a href='edito.php?article=<?php echo $row['Image']; ?>'>
+                        <a href='edito.php?article=<?php echo $row['ID']; ?>'>
                             <h1 class=titreArt> <?php echo $row['Titre']; ?></h1>
                         </a>
                         <?php echo " <p class=texte>" . $row['Resume'] . "</p> " ?>
@@ -59,4 +59,3 @@ $fonction = new site('127.0.0.1', 'root', '', 'journal');
 // appel de la page footer
 include_once('includes/footer.php');
 ?>
-</body>

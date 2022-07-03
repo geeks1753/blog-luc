@@ -8,3 +8,5 @@
         <div class="copyright"> kohl-web-design © 2022</div>
     </div>
 </footer>
+</body>
+</html>

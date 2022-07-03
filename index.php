@@ -13,16 +13,11 @@ require_once("fonctions.php");
 $fonction = new site('127.0.0.1', 'root', '', 'journal');
 ?>
 
-<body>
-    
-
         <div class="titre">Accueil</div>
-
-
 
     <?php
     session_start();
-    $requete = "SELECT `Image`,`Resume`,`Titre`,`Date` FROM `articles` ORDER BY `Date` DESC LIMIT 3; "; // Creation de la requete
+    $requete = "SELECT `ID`,`Image`,`Resume`,`Titre`,`Date` FROM `articles` ORDER BY `Date` DESC LIMIT 3; "; // Creation de la requete
     $resultat = $fonction->effectuerRequete($requete); // appel de fonction qui permet d effectuer la requete
    
     while ($row = $resultat->fetch_assoc()) {
@@ -35,7 +30,7 @@ $fonction = new site('127.0.0.1', 'root', '', 'journal');
                 </div>
                 <div class="col-8">
                     <div style="display:inline-block;"> 
-                        <a href='edito.php?article=<?php echo $row['Image'];?>'> <h1 class=titreArt> <?php echo $row['Titre'];?></h1></a>
+                        <a href='edito.php?article=<?php echo $row['ID'];?>'> <h1 class=titreArt> <?php echo $row['Titre'];?></h1></a>
                         <?php echo " <p class=texte>" . $row['Resume']. " </p> " ?>
                     </div><br><br><br>
                 </div>
@@ -52,5 +47,3 @@ $fonction = new site('127.0.0.1', 'root', '', 'journal');
     
 
 
-
-</body>
