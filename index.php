@@ -20,6 +20,7 @@ $fonction = new site('127.0.0.1', 'root', '', 'journal');
     $requete = "SELECT `ID`,`Image`,`Resume`,`Titre`,`Date` FROM `articles` ORDER BY `Date` DESC LIMIT 3; "; // Creation de la requete
     $resultat = $fonction->effectuerRequete($requete); // appel de fonction qui permet d effectuer la requete
    
+   
     while ($row = $resultat->fetch_assoc()) {
         
     ?>

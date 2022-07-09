@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-lg-6">
                     <label for="firstname" class="form-label">Prénom/Pseudo</label>
-                    <input id="firstname" type="text" name="firstname" class="form-control" placeholder="Votre prénom" value="">
+                    <input id="firstname" type="text" name="firstname" class="form-control" placeholder="Votre prénom" >
                 </div>
             </div>
 

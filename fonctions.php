@@ -12,17 +12,17 @@ class site
 	public function __construct($hote, $utilisateur, $motdepasse, $database)
 	{
 
-		$this->host = "127.0.0.1";//$hote;
-		$this->user =  "root";//$utilisateur;
-		$this->pass = "";//$motdepasse;
-		$this->bdd = "journal";//$database;
+		$this->host = $hote; // "127.0.0.1";
+		$this->user = $utilisateur; //  "root";
+		$this->pass = $motdepasse;//"";
+		$this->bdd = $database;//"journal";
 	}
 
 	//---------------méthode pour réaliser les requêtes------------------
 
 
 
-	function effectuerRequete($requete)         
+	 function effectuerRequete($requete)         
 	{
 		$resultat = false;
 		$con = new mysqli($this->host, $this->user, $this->pass, $this->bdd); 
@@ -33,21 +33,6 @@ class site
 		return $resultat;
 	}
 
-	/*public function connexion($Pseudo,$nom,$pass)
-    {
-        $res=false;
-        $requete= "SELECT COUNT (*) FROM `utilisateur` WHERE `prenom` = '$Pseudo' AND `nom`='$nom' AND `password` = '$pass';";
-        $resultat = $this->effectuerRequete($requete);
-        if ($resultat)
-        {
-            $ligne = mysqli_fetch_row($resultat);
-            if ($ligne[0] == 1)
-            {
-                $res = true;
-            }
-        }
-        return $res;
-    }*/
 
 	function securite($secu)
 	{

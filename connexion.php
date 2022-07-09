@@ -15,7 +15,7 @@ $fonction = new site('127.0.0.1', 'root', '', 'journal');
 
 session_start();
 
-$firstname = $pass = $name ="";
+
 $firstnameErreur = $passErreur =$nameErreur = "";
 $isSucces = false;
 
@@ -27,68 +27,51 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
    
 
     if (empty($firstname)) {
-        $firstnameErreur = "veuillez entrer votre prénom merci";
+        $firstnameErreur = " Prénom incorrect";
         $isSucces = true;
     
     } 
     if (empty($pass)) {
-        $passErreur = "veuillez entrer votre mot de pass merci";
+        $passErreur = " Mot de pass inccorect";
         $isSucces = true;
     }
-    
     if (empty($name)) {
-        $nameErreur = "veuillez entrer votre nom merci";
+        $nameErreur = " Nom incorrect";
         $isSucces = true;
-    
-    } 
-}
-
-include_once('includes/formConn.php');
+    }   
+}   
 
 
-
-/*if(isset($firstname) AND !empty($firstname)
-AND isset($pass) AND !empty($pass)
-AND isset($name) AND !empty($name))
+if(isset($firstname) AND isset($name) AND isset($pass))
 {
-    $Pseudo = $firstname;
-    $nom = $name;
-    $pwd = $pass;
-    $res = $fonction-> connexion ($Pseudo,$nom,$pwd);
-    if ($res)
-    {
-        $_SESSION['prenom'] = $Pseudo;
-        $_SESSION['nom'] = $nom;
-        $_SESSION['pass'] = $pwd;
-        header ("location: membre.php");
-    }
     
-}*/
-
-
-$reqconn ="SELECT COUNT (*) FROM `utilisateur` WHERE `prenom` = '$firstname' AND `nom`='$name' AND `password` = '$pass';";
-$resultat = $fonction->effectuerRequete($reqconn); 
-
-
-if(isset($_POST['firstname']) AND !empty($_POST['firstname'])
-AND isset($_POST['name']) AND !empty($_POST['name']	)
-AND isset($_POST['pass']) AND !empty($_POST['pass']	))
-{
+    $reqconn ="SELECT COUNT(*) FROM `utilisateur` WHERE `prenom` = '$firstname' AND `nom`='$name' AND `password` = '$pass';";
+    $resultat = $fonction->effectuerRequete($reqconn); 
    
-    echo "test1";
-    if ($resultat == true) {
-        $_SESSION['firstname'] = $firstname;
-        $_SESSION['name'] = $name;
-        $_SESSION['pass'] = $pass ;
-        echo "test2";
-       // header("location: membre.php");
+    
+    if ($resultat ==true) {
+        $ligne = mysqli_fetch_row($resultat);
+         if ($ligne[0] == 1)
+         {
+            $_SESSION['firstname'] = $firstname;
+            $_SESSION['name'] = $name;
+            $_SESSION['pass'] = $pass ;
+            //permet de coreler l'id utilisateur au pseudo de connexion 
+            $reqID ="SELECT `ID` FROM `utilisateur` WHERE `prenom` = '$firstname' AND `nom`='$name' AND `password` = '$pass';";
+            $resultatID = $fonction->effectuerRequete($reqID); 
+            while($row = $resultatID->fetch_assoc()){
+                $_SESSION['ID'] = $row['ID'] ;
+                header("location: membre.php");
+            }
+         }
+         else {
+            $isSucces = true;
+            include_once('includes/formConn.php');  
+         }
     }
-    else {
-       $isSucces=false;
-       echo "test3";
-    }
-    echo "test";
-}
+} else {
+    include_once('includes/formConn.php');  
+ }
 
 
 // appel de la page footer

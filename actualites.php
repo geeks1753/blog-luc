@@ -2,7 +2,7 @@
 // on définit le titre 
 $titre = "luc investigation Actualités";
 
-// on inclut le heder
+// on inclut le header
 include_once('includes/header.php');
 
 // on inclut la navbar

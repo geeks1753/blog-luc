@@ -1,10 +1,10 @@
 <?php
 
-// on définit le titre 
-$titre = "luc investigation membre";
+    // on définit le titre 
+    $titre = "luc investigation membre";
 
-// on inclut le heder
-include_once('includes/header.php');
+    // on inclut le heder
+    include_once('includes/header.php');
 
     // on inclut la navbar
     @include_once('includes/navbar.php');
@@ -34,23 +34,20 @@ if (isset($_SESSION['firstname']) and isset($_SESSION['pass']) and !empty($_SESS
 
 
 // initialisation des varibles 
-$pseudo = $titre = $texte = $image = $resume = "";
+$pseudo =$_SESSION['ID'];
+$titre = $texte = $image = $resume = "";
 $pseudoErreur = $titreErreur = $texteErreur = $imageErreur = $resumeErreur = "";
 $isSucces = false;
 
 // recuperation des informations pour les envoyer dans les variables
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $pseudo =  $fonction->securite($_POST["pseudo"]);
+
     $titre =  $fonction->securite($_POST["titre"]);
     $texte =  $fonction->securite($_POST["texte"]);
     $image =  $fonction->securite($_POST["image"]);
-    $resume =  $fonction->securite($_POST["resume"]);
+    $resume = $fonction->securite($_POST["resume"]);
 
-
-    if (empty($pseudo)) {
-        $pseudoErreur = "veuillez entrer votre pseudo merci";
-        $isSucces = true;
-    }
+  
     if (empty($titre)) {
         $titreErreur = "veuillez entrer un titre merci";
         $isSucces = true;
@@ -67,6 +64,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($resume)) {
         $resumeErreur = "veuillez résumer votre article merci";
         $isSucces = true;
+    }
+}
+
+
+
+if(isset($_POST['submit-article'])) { // si action sur le bonton envoie
+    if( isset($_POST["titre"]) AND isset($_POST["texte"]) AND isset($_POST["image"]) AND isset($_POST["resume"]))
+    {
+        $iduser=intval($pseudo);
+        
+        $requeteComm = "INSERT INTO `articles`(`Texte`,`Titre`,`Date`,`Resume`,`Image`,`User_ID`) 
+                    VALUES ('$texte' , '$titre' , NOW() , '$resume' , '$image' , $iduser )"; // Creation de la requete
+                    //var_dump($requeteComm); die();
+        $resultatComm = $fonction->effectuerRequete($requeteComm); // appel de fonction qui permet d effectuer la requete 
+        
     }
 }
 ?>
