@@ -1,6 +1,7 @@
 <div class="commentaire">
-    <form id="contact-com" method="POST" action="" role="form">
+    <form id="contact-com" method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" role="form">
         <div class="row">
+        <div class="titre"><h1>Formulaire d'inscription</h1></div>
             <div class="col-lg-6">
                 <label for="firstname" class="form-label">Prénom<span class="blue">*</span></label>
                 <input id="firstname" type="text" name="firstname" class="form-control" placeholder="Votre prénom">
@@ -33,7 +34,7 @@
             </div>
                     
             <p class="thank-you" style="display:<?php if ($isSucces) echo 'block';
-                                                else echo 'none'; ?>">Identifiants ou mot de passe incorrect.</p>
+                                                else echo 'none'; ?>"><?php echo $Erreur;?></p>
 
         </div>
 

@@ -61,7 +61,7 @@ if(isset($firstname) AND isset($name) AND isset($pass))
             $resultatID = $fonction->effectuerRequete($reqID); 
             while($row = $resultatID->fetch_assoc()){
                 $_SESSION['ID'] = $row['ID'] ;
-                header("location: membre.php");
+                header("location: admin/index.php");
             }
          }
          else {

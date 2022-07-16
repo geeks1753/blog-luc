@@ -34,7 +34,7 @@ $fonction = new site('127.0.0.1', 'root', '', 'journal');
 
             <div class="row">
                 <div class="col-4">
-                    <?php echo "<img  class='imageActu' src='images/" . $row["Image"] . ".jpg' />" ?>
+                    <img  class='image' src='images/<?php echo $row["Image"]?>'/>
                 </div>
                 <div class="col-8">
                     <div style="display:inline-block;">

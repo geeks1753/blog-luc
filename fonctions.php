@@ -34,6 +34,22 @@ class site
 	}
 
 
+	public function TestCompte($Nom,$Prenom)         
+    {
+        $res=false;
+        $requete= "SELECT COUNT(*) FROM `utilisateur` WHERE `nom` = '$Nom'  AND `prenom` = '$Prenom';";
+        $resultat = $this->effectuerRequete($requete);
+        if ($resultat)
+        {
+            $ligne = mysqli_fetch_row($resultat);
+            if ($ligne[0] == 1) {
+                $res = true;
+            }
+        }
+        return $res;
+    }
+
+
 	function securite($secu)
 	{
 	$secu=trim($secu);

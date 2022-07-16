@@ -1,11 +1,11 @@
 <div class="contact">
-        <form id="contact-form" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" role="form">
+        <form id="contact-form" method="post" action="" role="form">
             <div class="row">
             
                 <div class="col-lg-6">
                     <label for="image" class="form-label">Image <span class="blue">*</span></label>
-                    <input id="image" type="text" name="image" class="form-control" placeholder="Nom de votre Image">
-                    <p class="comments"><?php echo $imageErreur; ?></p>
+                    <input id="image" type="file" name="image">
+                    <p class="comments"><?php echo $imageErreur; ?></p><br><br>
                 </div>
                 <div class="col-lg-12">
                     <label for="titre" class="form-label">titre de l'article <span class="blue">*</span></label>
