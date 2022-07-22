@@ -56,11 +56,14 @@ if(isset($firstname) AND isset($name) AND isset($pass))
             $_SESSION['firstname'] = $firstname;
             $_SESSION['name'] = $name;
             $_SESSION['pass'] = $pass ;
+           
             //permet de coreler l'id utilisateur au pseudo de connexion 
-            $reqID ="SELECT `ID` FROM `utilisateur` WHERE `prenom` = '$firstname' AND `nom`='$name' AND `password` = '$pass';";
+            $reqID ="SELECT `ID`, `Grade` FROM `utilisateur` WHERE `prenom` = '$firstname' AND `nom`='$name' AND `password` = '$pass' ";
             $resultatID = $fonction->effectuerRequete($reqID); 
             while($row = $resultatID->fetch_assoc()){
                 $_SESSION['ID'] = $row['ID'] ;
+                $_SESSION['grade'] = $row['Grade'] ;
+                
                 header("location: admin/index.php");
             }
          }

@@ -6,20 +6,24 @@ require_once "jbbcode/Parser.php";
 
 
 // on inclut le heder
-include_once('includes/header.php');
+include_once('../includes/header.php');
 
-// on inclut la navbar
-@include_once('includes/navbar.php');
 
 // creation de la fonction menu
-require_once("fonctions.php");
+require_once("../fonctions.php");
 $fonction = new site('127.0.0.1', 'root', '', 'journal');
 
 
 session_start();
 ?>
 
-
+<div id="logo">
+    <img src="../images/LOGO.png" alt="Logo" id="logo" height="100" width="100" />
+    <p class="logo">Luc investigation </p>
+</div>
+<div class="form-insc">
+    <a class="btn btn-primary" href="index.php"><span class="bi-arrow-left"></span> Retour</a>
+</div>
 
 <div class="container-fluide">
     <?php
@@ -30,17 +34,13 @@ session_start();
         $message =  $fonction->securite($_POST["message"]);
     }
 
-
-    $edito = $_GET["article"];
-    $requeteTitre = "SELECT `Image`, `Titre`, `Texte` FROM `articles` WHERE `ID`= '$edito'; "; // Creation de la requete
-    $resultatTitre = $fonction->effectuerRequete($requeteTitre);
-
-
-
     ?>
 
     <div class="page">
         <?php
+        $edito = $_GET["id"];
+        $requeteTitre = "SELECT `Image`, `Titre`, `Texte` FROM `articles` WHERE `ID`= '$edito'; "; // Creation de la requete
+        $resultatTitre = $fonction->effectuerRequete($requeteTitre);
 
         $parser = new JBBCode\Parser();
         $parser->addCodeDefinitionSet(new JBBCode\DefaultCodeDefinitionSet());
@@ -51,14 +51,16 @@ session_start();
             echo "<div class='titre'>" . $Titre['Titre'] . "</div>";
             $parser->parse($Titre['Texte']);
             echo $parser->getAsHtml();
-            echo "<img class='image' src='images/".$Titre['Image']."?'/>";
+            echo "<img class='image' src='../images/" . $Titre['Image'] . "?'/>";
+            //var_dump($image);die();
+            //echo $image;
         }
         ?>
     </div>
 
     <?php
     // on inclut le formulaire des commentaires
-    include_once('includes/formArt.php');
+    include_once('../includes/formArt.php');
 
 
     // si action sur le bonton envoie   
@@ -91,8 +93,11 @@ session_start();
     ?>
 
 </div>
+<div id="scroll_to_top">
+    <a href="#top"><img src="../images/scrolltop.png" alt="Retourner en haut" /></a>
+</div>
 
-<?php
-// appel de la page footer
-include_once('includes/footer.php');
-?>
+
+</body>
+
+</html>

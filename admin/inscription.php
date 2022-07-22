@@ -80,8 +80,8 @@ if (isset($_POST['submit-inscription'])) // si action sur le bonton envoie
             $Erreur = "Ce compte existe déjà";
         } 
        
-            $requeteComm = "INSERT INTO `utilisateur`(`prenom`,`password`,`nom`,/*`grade`*/) 
-                        VALUES ('$firstname','$pass','$name', /*0*/)"; // Creation de la requete
+            $requeteComm = "INSERT INTO `utilisateur`(`prenom`,`password`,`nom`,`grade`) 
+                        VALUES ('$firstname','$pass','$name', 0 )"; // Creation de la requete
             $resultatComm = $fonction->effectuerRequete($requeteComm); // appel de fonction qui permet d effectuer la requete 
 
           
